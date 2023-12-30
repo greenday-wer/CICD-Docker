@@ -7,5 +7,5 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(1234, () => {
-    console.log('server running at http://localhost:1234/');
+    console.log('server running at http://192.168.241.205:1234/');
 });
