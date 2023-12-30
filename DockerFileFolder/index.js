@@ -1,15 +1,11 @@
-var express = require('express');
-var app = express();
+const http = require('http');
 
-app.get('/', function (req, res) {
-    res.send('{ "response": "Hello From Thetips4you" }');
+const server = http.createServer((req, res) => {
+    res.statusCode = 200;
+    res.setHeader('Content-Type', 'text/plain');
+    res.end('CICD');
 });
 
-app.get('/will', function (req, res) {
-    res.send('{ "response": "Hello World" }');
+server.listen(1234, () => {
+    console.log('server running at http://localhost:1234/');
 });
-app.get('/ready', function (req, res) {
-    res.send('{ "response": " Great!, It works!" }');
-});
-app.listen(process.env.PORT || 3000);
-module.exports = app;
